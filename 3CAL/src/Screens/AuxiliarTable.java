@@ -9,6 +9,7 @@ import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
@@ -80,8 +81,13 @@ public class AuxiliarTable extends javax.swing.JPanel {
         
         jTable1.setModel(tableModel);
         jTable1.setSize(827, 520);
-        tableModel.fireTableDataChanged();
-        tableModel.fireTableStructureChanged();
+        
+        jTable1.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
+
+        JScrollPane pane = new JScrollPane(jTable1);
+        this.add(pane);
+        
+        
 
         jTable1.revalidate();
         jTable1.repaint();
